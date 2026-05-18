@@ -1,4 +1,15 @@
+import { useTypewriter } from '../hooks/useTypewriter';
+
+const PHRASES = [
+  'Building things.',
+  'Solving problems.',
+  'Writing clean code.',
+  'Shipping products.',
+];
+
 export default function Hero() {
+  const typed = useTypewriter(PHRASES);
+
   return (
     <section className="hero">
       <div className="hero-text">
@@ -6,7 +17,12 @@ export default function Hero() {
         <h1>
           <span className="line"><span>Leonardo</span></span>
           <span className="line"><span>Bala<em>.</em></span></span>
-          <span className="line"><span><em>Building</em> things.</span></span>
+          <span className="line">
+            <span>
+              <em className="typewriter">{typed}</em>
+              <span className="typewriter-cursor" aria-hidden="true">|</span>
+            </span>
+          </span>
         </h1>
         <p className="hero-desc">
           Student la Tehnologia Informației, pasionat de cod curat,
