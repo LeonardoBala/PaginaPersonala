@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
 import CustomCursor from './components/CustomCursor';
+import SplashScreen from './components/SplashScreen';
 import { useScrollReveal } from './hooks/useScrollReveal';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
 
   return (
     <>
+      <SplashScreen />
       <ScrollProgress />
       <CustomCursor />
       <Navbar />
