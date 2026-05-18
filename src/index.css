@@ -103,7 +103,7 @@ body::before {
   z-index: 0;
 }
 
-::selection { background: var(--accent); color: var(--paper); }
+::selection { background: var(--accent); color: var(--on-accent); }
 
 /* ─── NAVIGATION ─── */
 nav {
@@ -844,6 +844,10 @@ section {
   width: fit-content;
   border-radius: 2px;
 }
+[data-theme="dark"] .featured-badge {
+  background: rgba(74, 140, 92, 0.15);
+  color: #8ecfa3;
+}
 @media (max-width: 1100px) {
   .projects-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
@@ -904,7 +908,7 @@ section {
 .project-card:hover .project-arrow {
   background: var(--accent);
   border-color: var(--accent);
-  color: var(--paper);
+  color: var(--on-accent);
   transform: rotate(-45deg);
 }
 .loading {
@@ -1147,7 +1151,7 @@ footer {
   position: fixed;
   inset: 0;
   z-index: 9998;
-  background: var(--ink);
+  background: var(--dark-surface);
   display: flex;
   flex-direction: column;
   align-items: center;
