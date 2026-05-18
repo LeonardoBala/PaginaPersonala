@@ -15,21 +15,42 @@
   --mono: 'JetBrains Mono', monospace;
   --nav-bg: rgba(244, 240, 230, 0.78);
   --theme-transition: background 0.4s, color 0.4s, border-color 0.4s;
+
+  /* Variables for always-dark sections (Contact, Footer) */
+  --dark-surface:       #1c2620;
+  --dark-surface-text:  #f4f0e6;
+  --dark-surface-desc:  rgba(244, 240, 230, 0.72);
+  --dark-surface-muted: rgba(244, 240, 230, 0.50);
+  --dark-surface-line:  rgba(244, 240, 230, 0.10);
+  --dark-surface-soft:  rgba(244, 240, 230, 0.22);
+
+  /* Light text on colored (accent) backgrounds */
+  --on-accent: #faf7ee;
 }
 
 [data-theme="dark"] {
   --bg: #111a14;
   --bg-alt: #1a2820;
-  --ink: #e4dfd4;
-  --ink-soft: #b0bfb6;
-  --ink-muted: #6b7a6e;
+  --ink: #e2ddd2;
+  --ink-soft: #adbfb4;
+  --ink-muted: #7a9080;
   --line: #253020;
   --accent: #4a8c5c;
-  --accent-soft: #1e3028;
+  --accent-soft: #2a4a34;
   --accent-deep: #3a7048;
-  --paper: #162018;
+  --paper: #172019;
   --shadow: 0 1px 2px rgba(0,0,0,0.2), 0 12px 32px rgba(0,0,0,0.4);
   --nav-bg: rgba(17, 26, 20, 0.88);
+
+  /* Keep dark sections truly dark in dark mode */
+  --dark-surface:       #0c1510;
+  --dark-surface-text:  #e2ddd2;
+  --dark-surface-desc:  rgba(226, 221, 210, 0.72);
+  --dark-surface-muted: rgba(226, 221, 210, 0.50);
+  --dark-surface-line:  rgba(226, 221, 210, 0.10);
+  --dark-surface-soft:  rgba(226, 221, 210, 0.22);
+
+  --on-accent: #e2ddd2;
 }
 
 /* ─── THEME TOGGLE BUTTON ─── */
@@ -353,7 +374,7 @@ nav.scrolled {
   z-index: 0;
 }
 .cv-btn:hover::before { transform: translateX(0); }
-.cv-btn:hover { color: var(--paper); }
+.cv-btn:hover { color: var(--on-accent); }
 .cv-btn > * { position: relative; z-index: 1; }
 .cv-btn-icon {
   font-size: 1rem;
@@ -543,7 +564,7 @@ section {
   z-index: 0;
 }
 .skill-cell:hover::before { transform: scaleY(1); }
-.skill-cell:hover { color: var(--paper); }
+.skill-cell:hover { color: var(--on-accent); }
 .skill-cell > * { position: relative; z-index: 1; }
 .skill-num {
   font-family: var(--mono);
@@ -942,8 +963,8 @@ section {
   transition: color 0.5s, border-color 0.5s;
 }
 .view-all-btn:hover .view-all-label {
-  color: rgba(244, 240, 230, 0.5);
-  border-right-color: rgba(244, 240, 230, 0.2);
+  color: var(--dark-surface-muted);
+  border-right-color: var(--dark-surface-line);
 }
 .view-all-text {
   font-family: var(--display);
@@ -1032,8 +1053,8 @@ section {
 .contact {
   padding: 10rem 3rem;
   text-align: center;
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--dark-surface);
+  color: var(--dark-surface-text);
   position: relative;
   overflow: hidden;
 }
@@ -1051,7 +1072,7 @@ section {
   line-height: 0.8;
   pointer-events: none;
 }
-.contact .section-label { color: var(--accent-soft); justify-content: center; }
+.contact .section-label { color: var(--accent); justify-content: center; }
 .contact-title {
   font-family: var(--display);
   font-size: clamp(3rem, 7vw, 6rem);
@@ -1065,7 +1086,7 @@ section {
 .contact-title em { font-style: italic; color: var(--accent); }
 .contact-desc {
   font-size: 1.15rem;
-  color: rgba(244, 240, 230, 0.72);
+  color: var(--dark-surface-desc);
   max-width: 600px;
   margin: 0 auto 3rem;
   position: relative;
@@ -1081,8 +1102,8 @@ section {
 }
 .contact-link {
   padding: 1rem 2rem;
-  border: 1px solid rgba(244, 240, 230, 0.22);
-  color: var(--bg);
+  border: 1px solid var(--dark-surface-soft);
+  color: var(--dark-surface-text);
   text-decoration: none;
   font-size: 0.9rem;
   letter-spacing: 0.05em;
@@ -1103,20 +1124,20 @@ section {
 }
 .contact-link.primary:hover {
   background: transparent;
-  border-color: var(--bg);
+  border-color: var(--dark-surface-text);
 }
 
 /* ─── FOOTER ─── */
 footer {
   padding: 2rem 3rem;
-  background: var(--ink);
-  color: rgba(244, 240, 230, 0.5);
+  background: var(--dark-surface);
+  color: var(--dark-surface-muted);
   font-family: var(--mono);
   font-size: 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(244, 240, 230, 0.1);
+  border-top: 1px solid var(--dark-surface-line);
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -1144,7 +1165,7 @@ footer {
   font-style: italic;
   font-size: clamp(4rem, 12vw, 8rem);
   font-weight: 400;
-  color: var(--paper);
+  color: var(--dark-surface-text);
   letter-spacing: -0.06em;
   line-height: 1;
   animation: splashPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
