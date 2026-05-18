@@ -34,6 +34,15 @@ export default function Hero() {
           <div className="meta-item">FOCUS<strong>Full-Stack &amp; Backend</strong></div>
           <div className="meta-item">STATUS<strong>Open to work</strong></div>
         </div>
+        <a
+          href="/cv-leonardo-bala.pdf"
+          download="CV-Leonardo-Bala.pdf"
+          className="cv-btn"
+          aria-label="Download CV"
+        >
+          <span className="cv-btn-icon">↓</span>
+          <span className="cv-btn-text">Download CV</span>
+        </a>
       </div>
       <div className="hero-visual">
         <div className="photo-frame-wrap">
